@@ -15,7 +15,7 @@ import java.util.List;
 public class ReplyKeyboardMy extends BotCommand {
 
     private static final String commandIdentifier = "update_buttons";
-    private static final String description = "yes, sir!";
+    private static final String description = "yes";
 
     public ReplyKeyboardMy() {
         super(commandIdentifier, description);

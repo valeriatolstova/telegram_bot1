@@ -15,8 +15,8 @@ import java.util.List;
 class InlineKeyboardMy extends BotCommand {
 
     private static final String CommandIdentifier = "inline";
-    private static final String Description = "yes, sir!";
-    private static final String[] CatchWords = {"YouTube", "GitHub", "share", "reply"};
+    private static final String Description = "yes";
+    private static final String[] CatchWords = {"Site", "World", "share", "reply"};
 
     public InlineKeyboardMy() {
         super(CommandIdentifier, Description);
@@ -28,10 +28,10 @@ class InlineKeyboardMy extends BotCommand {
         List<InlineKeyboardButton> keyboardFirstRow = new ArrayList<>();
         if (args != null && args.length > 0) {
             if (args[0].contains(CatchWords[0])) {
-                keyboardFirstRow.add(new InlineKeyboardButton("open").setUrl("https://www.adme.ru/tvorchestvo-dizajn/15-unikalnyh-sajtov-o-kotoryh-vy-ne-slyshali-954010/"));
+                keyboardFirstRow.add(new InlineKeyboardButton("open_site").setUrl("https://www.adme.ru/tvorchestvo-dizajn/15-unikalnyh-sajtov-o-kotoryh-vy-ne-slyshali-954010/"));
             }
             if (args[0].contains(CatchWords[1])) {
-                keyboardFirstRow.add(new InlineKeyboardButton("open").setUrl("http://geacron.com/home-en/?&sid=GeaCron472516"));
+                keyboardFirstRow.add(new InlineKeyboardButton("open_world").setUrl("http://geacron.com/home-en/?&sid=GeaCron472516"));
             }
             if (args[0].contains(CatchWords[2])) {
                 keyboardFirstRow.add(new InlineKeyboardButton("share to friend").setSwitchInlineQuery("it is  bot"));

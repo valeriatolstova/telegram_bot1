@@ -21,7 +21,7 @@ import java.util.List;
 public class FirstCommand extends BotCommand {
 
     private static final String commandIdentifier = "hello_command";
-    private static final String description = "yes, sir!";
+    private static final String description = "yes";
 
     public FirstCommand() {
         super(commandIdentifier, description);
