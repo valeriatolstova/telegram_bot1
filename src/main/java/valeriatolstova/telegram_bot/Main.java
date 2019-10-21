@@ -4,6 +4,7 @@ import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
+import org.telegram.telegrambots.extensions.bots.commandbot.commands.IBotCommand;
 import org.telegram.telegrambots.meta.ApiContext;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -18,6 +19,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException;
 import org.telegram.telegrambots.meta.generics.LongPollingBot;
 
 import java.util.ArrayList;
@@ -31,9 +33,10 @@ public class Main extends TelegramLongPollingCommandBot {
     public static final String TOKEN = "915040047:AAGeoRStxsnIdyU2srwM9zlk9fmlPYevlXo";
 
     public Main(DefaultBotOptions botOptions) {
-        super(String.valueOf(botOptions));
+        super(botOptions, USERNAME);
         register(new HelloCommand());
-    }
+        register(new InlineKeyboard());
+     }
 
  /*   @Override
     public String getBotUsername() {
